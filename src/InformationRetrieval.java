@@ -99,7 +99,7 @@ public class InformationRetrieval {
 	 */
 	public static boolean isValidName(String name, ContactInfo contact) throws IOException {		
 		//Accessing the pre-trained model file to identify names
-        FileInputStream is = new FileInputStream("C:\\Users\\Alex\\Downloads\\en-ner-person.bin");
+        FileInputStream is = new FileInputStream("en-ner-person.bin");
         TokenNameFinderModel model = new TokenNameFinderModel(is);
         is.close();
                 
