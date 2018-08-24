@@ -23,7 +23,7 @@ public class InformationRetrieval {
 	/*
 	 * Regular expression for identifying if the pattern of the String matches an
 	 * phone number This expression limits the phone number up to 25 characters and
-	 * accounts for different number formats
+	 * works for different phone number formats
 	 */
 	private static final String REGULAR_EXPRESSION_FOR_PHONE_NUMBER = "^\\+?[0-9. ()-]{10,25}$";
 
@@ -60,7 +60,7 @@ public class InformationRetrieval {
 		// If the number isn't a fax, then we want to continue to check if it is a valid
 		// phone number
 		if (!number.contains("Fax")) {
-			number = seperatePhoneNumber(number);
+			number = separatePhoneNumber(number);
 			p = Pattern.compile(REGULAR_EXPRESSION_FOR_PHONE_NUMBER, Pattern.CASE_INSENSITIVE);
 			matchPattern = p.matcher(number);
 			isValidPhoneNumber = matchPattern.matches();
@@ -77,7 +77,7 @@ public class InformationRetrieval {
 	/*
 	 * This method is to separate the actual number from any other arbitrary text on the same line
 	 */
-	public static String seperatePhoneNumber(String number) {
+	public static String separatePhoneNumber(String number) {
 		char num = 0;
 		String seperatedNumber = "";
 		try {

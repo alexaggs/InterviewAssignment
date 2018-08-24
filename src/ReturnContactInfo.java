@@ -8,18 +8,20 @@ public class ReturnContactInfo {
 
 	public static void main(String args[]) throws IOException {
 		Scanner scan = new Scanner(System.in);
-		List<String> token = new ArrayList<String>();	
+		List<String> userInputByLine = new ArrayList<String>();	
 		String userInput = "";
 		
 		while(scan.hasNextLine()) {
-			token.add(scan.nextLine());
-			if(token.contains("")) {
-				token.remove("");
+			userInputByLine.add(scan.nextLine());
+			if(userInputByLine.contains("")) {
+				userInputByLine.remove("");
 				break;
 			}
 		}
 		scan.close();
-		for(String t: token) {
+		
+		//Putting the user input into a string separated by a new line for each input
+		for(String t: userInputByLine) {
 			userInput += t + "\n";
 		}
 		
