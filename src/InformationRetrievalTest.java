@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
+/*
+ * Unit Tests for the InformationRetrieval class methods
+ */
 public class InformationRetrievalTest {
 
 	@Test

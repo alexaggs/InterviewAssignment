@@ -110,7 +110,6 @@ public class InformationRetrieval {
         for(String s: names) {
             //The model we are using sometimes recognizes integers as a name, so this is a check to see if the recognized name is an Integer or not
         	if(!isAValidInteger(s)) {
-        		System.out.println(s);
         		contact.setName(s);
         	}
         }
