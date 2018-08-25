@@ -25,20 +25,17 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testIsValidNameShouldReturnTrueAndSetNameAccordingly() {
+	public void testIsValidNameShouldSetNameAccordingly() {
 		String name = "Alex Aguilar";
 		
 		ContactInfo testContact = new ContactInfo();
 		
-		Boolean isAValidName = false;
-		
 		try {
-			isAValidName = InformationRetrieval.isValidName(name, testContact);
+			InformationRetrieval.setName(name, testContact);
 		} catch (IOException e) {
 			
 		}
 		
-		assertEquals(true, isAValidName);
 		assertEquals(name, testContact.getName());
 	}
 	
@@ -48,15 +45,12 @@ public class InformationRetrievalTest {
 		
 		ContactInfo testContact = new ContactInfo();
 		
-		Boolean isAValidName = true;
-		
 		try {
-			isAValidName = InformationRetrieval.isValidName(name, testContact);
-		} catch (IOException e) {
-			isAValidName = false;
+			InformationRetrieval.setName(name, testContact);
+		} 
+		catch (IOException e) {
 		}
 		
-		assertEquals(false, isAValidName);
 		assertEquals("No Valid Name", testContact.getName());
 	}
 	
@@ -89,28 +83,38 @@ public class InformationRetrievalTest {
 		String testInputThree = "Phone: (732)777-3333";
 		String testInputFour = "908-800-2233";
 		
-		ContactInfo testContact = new ContactInfo();
+		ContactInfo testContactOne = new ContactInfo();
+		ContactInfo testContactTwo = new ContactInfo();
+		ContactInfo testContactThree = new ContactInfo();
+		ContactInfo testContactFour = new ContactInfo();
 		
-		Boolean retrieveNumberOne = InformationRetrieval.isValidPhoneNumber(testInputOne, testContact);
-		Boolean retrieveNumberTwo = InformationRetrieval.isValidPhoneNumber(testInputTwo, testContact);
-		Boolean retrieveNumberThree = InformationRetrieval.isValidPhoneNumber(testInputThree, testContact);
-		Boolean retrieveNumberFour = InformationRetrieval.isValidPhoneNumber(testInputFour, testContact);
+		
+		InformationRetrieval.setPhoneNumber(testInputOne, testContactOne);
+		InformationRetrieval.setPhoneNumber(testInputTwo, testContactTwo);
+		InformationRetrieval.setPhoneNumber(testInputThree, testContactThree);
+		InformationRetrieval.setPhoneNumber(testInputFour, testContactFour);
+		
+		String inputOneShouldBe = "17035551259";
+		String inputTwoShouldBe = "7324442222";
+		String inputThreeShouldBe = "7327773333";
+		String inputFourShouldBe = "9088002233";
 
-		assertEquals(true, retrieveNumberOne);
-		assertEquals(true, retrieveNumberTwo);
-		assertEquals(true, retrieveNumberThree);
-		assertEquals(true, retrieveNumberFour);
+
+		assertEquals(testContactOne.getPhoneNumber(), inputOneShouldBe);
+		assertEquals(testContactTwo.getPhoneNumber(), inputTwoShouldBe);
+		assertEquals(testContactThree.getPhoneNumber(), inputThreeShouldBe);
+		assertEquals(testContactFour.getPhoneNumber(), inputFourShouldBe);
 	}
 	
 	@Test
-	public void isValidPhoneNumberShouldNotGetPhoneNumberWhenInvalid() {
+	public void isValidPhoneNumberShouldNotChangePhoneNumberWithInvalidInput() {
 		String testInputFive = "Fax: 2223334444";
 		
 		ContactInfo testContact = new ContactInfo();
 
-		Boolean retrieveNumberFive = InformationRetrieval.isValidPhoneNumber(testInputFive, testContact);
+		InformationRetrieval.setPhoneNumber(testInputFive, testContact);
 
-		assertEquals(false, retrieveNumberFive);
+		assertEquals(testContact.getPhoneNumber(), "No Valid Phone Number");
 	}
 	
 	@Test
@@ -119,9 +123,8 @@ public class InformationRetrievalTest {
 		
 		ContactInfo testContact = new ContactInfo();
 		
-		Boolean retrievEmail = InformationRetrieval.isValidEmail(testEmail, testContact);
+		InformationRetrieval.setEmail(testEmail, testContact);
 		
-		assertEquals(true, retrievEmail);
 		assertEquals(testEmail, testContact.getEmailAddress());
 	}
 	
@@ -131,9 +134,8 @@ public class InformationRetrievalTest {
 		
 		ContactInfo testContact = new ContactInfo();
 		
-		Boolean retrievEmail = InformationRetrieval.isValidEmail(testEmail, testContact);
+		InformationRetrieval.setEmail(testEmail, testContact);
 		
-		assertEquals(false, retrievEmail);
 		assertEquals("No Valid Email Address", testContact.getEmailAddress());
 	}
 }

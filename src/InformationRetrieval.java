@@ -34,7 +34,7 @@ public class InformationRetrieval {
 	/*
 	 * Checks if the current line is a valid email
 	 */
-	public static boolean isValidEmail(String email, ContactInfo contact) {
+	public static void setEmail(String email, ContactInfo contact) {
 		String lines[] = email.split("\\s+");
 
 		Boolean isValidEmail = false;
@@ -47,14 +47,12 @@ public class InformationRetrieval {
 				contact.setEmail(word);
 			}
 		}
-
-		return isValidEmail;
 	}
 
 	/*
 	 * Checks if the current line is a valid phone number
 	 */
-	public static boolean isValidPhoneNumber(String number, ContactInfo contact) {
+	public static void setPhoneNumber(String number, ContactInfo contact) {
 		Boolean isValidPhoneNumber = false;
 
 		// If the number isn't a fax, then we want to continue to check if it is a valid
@@ -71,7 +69,6 @@ public class InformationRetrieval {
 				contact.setPhoneNumber(number);	
 			}
 		}
-		return isValidPhoneNumber;
 	}
 	
 	/*
@@ -97,7 +94,7 @@ public class InformationRetrieval {
 	/*
 	 * Checks if the current line is a valid name
 	 */
-	public static boolean isValidName(String name, ContactInfo contact) throws IOException {		
+	public static void setName(String name, ContactInfo contact) throws IOException {		
 		//Accessing the pre-trained model file to identify names
         FileInputStream is = new FileInputStream("en-ner-person.bin");
         TokenNameFinderModel model = new TokenNameFinderModel(is);
@@ -115,11 +112,8 @@ public class InformationRetrieval {
         	if(!isAValidInteger(s)) {
         		System.out.println(s);
         		contact.setName(s);
-        		return true;
         	}
         }
-
-		return false;
 	}
 	
 	public static boolean isAValidInteger(String s) {

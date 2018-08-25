@@ -36,14 +36,14 @@ public class BusinessCardParser {
 	}
 	
 	public static void retrieveName(String line, ContactInfo contact) throws IOException {
-		InformationRetrieval.isValidName(line, contact);
+		InformationRetrieval.setName(line, contact);
 	}
 	
 	public static void retrievePhoneNumber(String line, ContactInfo contact) {
-		InformationRetrieval.isValidPhoneNumber(line, contact);
+		InformationRetrieval.setPhoneNumber(line, contact);
 	}
 	
 	public static void retrieveEmailAddress(String line, ContactInfo contact) {
-		InformationRetrieval.isValidEmail(line, contact);
+		InformationRetrieval.setEmail(line, contact);
 	}
 }
