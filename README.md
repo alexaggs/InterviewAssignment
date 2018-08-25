@@ -2,7 +2,7 @@
 
 # Installing
 
-  You can either clone the repository or download the zip and import the project into your local IDE.
+  You can either clone the repository or download the zip and import the project into your IDE.
   
 # Testing
 
