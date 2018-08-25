@@ -2,8 +2,7 @@
 
 # Installing
 
-  You can either clone the repository or download the zip and import the project into your local IDE. Maven will handle your dependencies so
-  you do not have to download anything extra.
+  You can either clone the repository or download the zip and import the project into your local IDE.
   
 # Testing
 
