@@ -22,16 +22,28 @@ public class BusinessCardParser {
 	public static void setContactInfo(String[] lines, ContactInfo contact) throws IOException {
 		for(String line : lines) {
 			if(contact.getName().equals("No Valid Name")) {
-				InformationRetrieval.isValidName(line, contact);
+				BusinessCardParser.retrieveName(line, contact);
 			}
 			
 			if(contact.getPhoneNumber().equals("No Valid Phone Number")) {
-				InformationRetrieval.retrievePhoneNumber(line, contact);
+				BusinessCardParser.retrievePhoneNumber(line, contact);
 			}
 			
 			if(contact.getEmailAddress().equals("No Valid Email Address")) {
-				InformationRetrieval.retrieveEmail(line, contact);
+				BusinessCardParser.retrieveEmailAddress(line, contact);
 			}
 		}
+	}
+	
+	public static void retrieveName(String line, ContactInfo contact) throws IOException {
+		InformationRetrieval.isValidName(line, contact);
+	}
+	
+	public static void retrievePhoneNumber(String line, ContactInfo contact) {
+		InformationRetrieval.isValidPhoneNumber(line, contact);
+	}
+	
+	public static void retrieveEmailAddress(String line, ContactInfo contact) {
+		InformationRetrieval.isValidEmail(line, contact);
 	}
 }

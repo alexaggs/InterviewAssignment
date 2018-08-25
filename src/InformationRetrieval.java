@@ -34,7 +34,7 @@ public class InformationRetrieval {
 	/*
 	 * Checks if the current line is a valid email
 	 */
-	public static boolean retrieveEmail(String email, ContactInfo contact) {
+	public static boolean isValidEmail(String email, ContactInfo contact) {
 		String lines[] = email.split("\\s+");
 
 		Boolean isValidEmail = false;
@@ -54,7 +54,7 @@ public class InformationRetrieval {
 	/*
 	 * Checks if the current line is a valid phone number
 	 */
-	public static boolean retrievePhoneNumber(String number, ContactInfo contact) {
+	public static boolean isValidPhoneNumber(String number, ContactInfo contact) {
 		Boolean isValidPhoneNumber = false;
 
 		// If the number isn't a fax, then we want to continue to check if it is a valid
@@ -113,7 +113,9 @@ public class InformationRetrieval {
         for(String s: names) {
             //The model we are using sometimes recognizes integers as a name, so this is a check to see if the recognized name is an Integer or not
         	if(!isAValidInteger(s)) {
+        		System.out.println(s);
         		contact.setName(s);
+        		return true;
         	}
         }
 
