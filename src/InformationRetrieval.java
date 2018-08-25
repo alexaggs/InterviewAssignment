@@ -72,7 +72,9 @@ public class InformationRetrieval {
 	}
 	
 	/*
-	 * This method is to separate the actual number from any other arbitrary text on the same line
+	 * This method is to separate the actual number from any other text on the same line.
+	 * This comes into play when you have an input that has the text "Phone:" in it or
+	 * something similar
 	 */
 	public static String separatePhoneNumber(String number) {
 		char num = 0;
@@ -115,6 +117,9 @@ public class InformationRetrieval {
         }
 	}
 	
+	/*
+	 * Checks if the String can be parsed into an Integer 
+	 */
 	public static boolean isAValidInteger(String s) {
 		Boolean exceptionCaught = true;
 

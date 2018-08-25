@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class InformationRetrievalTest {
 
 	@Test
-	public void testIsAValidIntegerShouldReturnTrue() {
+	public void isAValidIntegerShouldReturnTrue() {
 		String testString = "24";
 		
 		Boolean isAValidInteger = InformationRetrieval.isAValidInteger(testString);
@@ -19,7 +19,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testIsAValidIntegerShouldReturnFalse() {
+	public void isAValidIntegerShouldReturnFalse() {
 		String testString = "Not an Integer";
 		
 		Boolean isAValidInteger = InformationRetrieval.isAValidInteger(testString);
@@ -28,7 +28,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testIsValidNameShouldSetNameAccordingly() {
+	public void setNameShouldSetNameAccordingly() {
 		String name = "Alex Aguilar";
 		
 		ContactInfo testContact = new ContactInfo();
@@ -43,7 +43,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testIsValidNameShouldReturnFalseAndNotChangeName() {
+	public void setNameShouldNotChangeName() {
 		String name = "Not a valid name..";
 		
 		ContactInfo testContact = new ContactInfo();
@@ -58,7 +58,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testSeparatePhoneNumberShouldSeparateNumberCorrectly() {
+	public void separatePhoneNumberShouldSeparateNumberCorrectly() {
 		String testPhoneNumber = "Phone: 7322378999";
 		
 		String separatedNumber = InformationRetrieval.separatePhoneNumber(testPhoneNumber);
@@ -69,7 +69,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void testSeparatePhoneNumberShouldNotReturnBlankStringOnBadInput() {
+	public void separatePhoneNumberShouldReturnBlankStringOnBadInput() {
 		String testPhoneNumber = "Phone: Bad Input";
 		
 		String separatedNumber = InformationRetrieval.separatePhoneNumber(testPhoneNumber);
@@ -80,7 +80,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void isValidPhoneNumberShouldGetCorrectPhoneNumberAndSetPhoneNumberCorrectly() {
+	public void setPhoneNumberShouldGetCorrectPhoneNumberAndSetPhoneNumberCorrectly() {
 		String testInputOne = "+1 (703) 555-1259";
 		String testInputTwo = "732 444 2222";
 		String testInputThree = "Phone: (732)777-3333";
@@ -110,7 +110,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void isValidPhoneNumberShouldNotChangePhoneNumberWithInvalidInput() {
+	public void setPhoneNumberShouldNotChangePhoneNumberWithInvalidInput() {
 		String testInputFive = "Fax: 2223334444";
 		
 		ContactInfo testContact = new ContactInfo();
@@ -121,7 +121,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void isValidEmailShouldRetrieveCorrectEmailAndSetEmailAccordingly() {
+	public void setEmailShouldRetrieveCorrectEmailAndSetEmailAccordingly() {
 		String testEmail = "aaguila3@villanova.edu";
 		
 		ContactInfo testContact = new ContactInfo();
@@ -132,7 +132,7 @@ public class InformationRetrievalTest {
 	}
 	
 	@Test
-	public void isValidEmailShouldNotRetrieveCorrectEmailAndNotChangeEmail() {
+	public void setEmailShouldNotRetrieveEmailAndNotChangeEmail() {
 		String testEmail = "Not.An.Email";
 		
 		ContactInfo testContact = new ContactInfo();

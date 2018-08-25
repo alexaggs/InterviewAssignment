@@ -42,5 +42,4 @@ public class ContactInfo {
 	public String displayInformation() {
 		return "Name: " + this.getName() + "\nEmail: " + this.getEmailAddress() + "\nPhone: " + this.getPhoneNumber();
 	}
-
 }

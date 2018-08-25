@@ -19,30 +19,42 @@ public class BusinessCardParser {
 		return contact;
 	}
 	
+	/*
+	 * Sets the contact information based on the input
+	 */
 	public static void setContactInfo(String[] lines, ContactInfo contact) throws IOException {
 		for(String line : lines) {
 			if(contact.getName().equals("No Valid Name")) {
-				BusinessCardParser.retrieveName(line, contact);
+				retrieveName(line, contact);
 			}
 			
 			if(contact.getPhoneNumber().equals("No Valid Phone Number")) {
-				BusinessCardParser.retrievePhoneNumber(line, contact);
+				retrievePhoneNumber(line, contact);
 			}
 			
 			if(contact.getEmailAddress().equals("No Valid Email Address")) {
-				BusinessCardParser.retrieveEmailAddress(line, contact);
+				retrieveEmailAddress(line, contact);
 			}
 		}
 	}
 	
+	/*
+	 * Gets the Name based off the input
+	 */
 	public static void retrieveName(String line, ContactInfo contact) throws IOException {
 		InformationRetrieval.setName(line, contact);
 	}
 	
+	/*
+	 * Gets the Phone Number based off the input
+	 */
 	public static void retrievePhoneNumber(String line, ContactInfo contact) {
 		InformationRetrieval.setPhoneNumber(line, contact);
 	}
 	
+	/*
+	 * Gets the Email Address based off the input
+	 */
 	public static void retrieveEmailAddress(String line, ContactInfo contact) {
 		InformationRetrieval.setEmail(line, contact);
 	}
