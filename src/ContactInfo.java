@@ -40,6 +40,6 @@ public class ContactInfo {
 	}
 	
 	public String displayInformation() {
-		return "Name: " + this.getName() + "\nEmail: " + this.getEmailAddress() + "\nPhone: " + this.getPhoneNumber();
+		return "Name: " + this.getName() + "\nPhone: " + this.getPhoneNumber() + "\nEmail: " + this.getEmailAddress();
 	}
 }
