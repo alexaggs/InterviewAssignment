@@ -25,7 +25,13 @@ public class ReturnContactInfo {
 				if(userInputByLine.contains("Done")) {
 					stillTesting = false;
 					System.out.println("Process Terminated");
+					break;
 				}
+			}
+			
+			//We don't want to execute the code again if we terminate the process
+			if(!stillTesting) {
+				break;
 			}
 			
 			//Putting the user input into a string separated by a new line for each input
