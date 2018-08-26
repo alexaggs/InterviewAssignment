@@ -22,6 +22,9 @@
   
   and you would just have to enter a blank line to extract the necessary data. 
   
+  You can keep entering test data as you please, but when you are finished, you must type "Done". This will terminate the process
+  and the program will stop running.
+  
   # Built With
   
   Maven - Dependency Management
